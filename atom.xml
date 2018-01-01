@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>walle&#39;s Notes</title>
+  
+  <subtitle>Quick notes</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://wallenote.github.io/"/>
+  <updated>2018-01-01T17:06:12.000Z</updated>
+  <id>https://wallenote.github.io/</id>
+  
+  <author>
+    <name>Eter</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CPP深入研究智能指针</title>
+    <link href="https://wallenote.github.io/2018/01/01/cpp_smart_ptr/"/>
+    <id>https://wallenote.github.io/2018/01/01/cpp_smart_ptr/</id>
+    <published>2018-01-01T13:46:31.000Z</published>
+    <updated>2018-01-01T17:06:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建和使用unique-ptr实例"><a href="#创建和使用unique-ptr实例" class="headerlink" title="创建和使用unique_ptr实例"></a>创建和使用unique_ptr实例</h2><p>A unique_ptr不会共享它的指针。 无法将它复制到另一个unique_ptr，（除非它是可修改rvalue） 通过值传递给函数，或需要对其进行复制的任何标准模板库 (STL) 算法中使用。 A unique_ptr只能移动。 这意味着内存资源的所有权将转移到新的unique_ptr和原始unique_ptr不再拥有它。 我们建议您将一个对象限制为一个所有者，因为拥有多个程序逻辑增加复杂性。 因此，当您需要为普通的 C++ 对象的智能指针，使用unique_ptr。</p><p>下图说明了两个转让所有权unique_ptr实例。</p><img src="/2018/01/01/cpp_smart_ptr/unique_ptr.png" title="unique_ptr"><p>移动 unique_ptr 的所有权<br>unique_ptr在中定义<memory> STL 中的标头。 它是完全有效与原始指针，可以使用 STL 容器中。 添加unique_ptr是有效的实例的 STL 容器因为移动构造函数的unique_ptr不需要复制操作。</memory></p><div class="note info"><p>unique_ptr </p></div><a id="more"></a><h2 id="创建和使用shared-ptr实例"><a href="#创建和使用shared-ptr实例" class="headerlink" title="创建和使用shared_ptr实例"></a>创建和使用shared_ptr实例</h2><p>shared_ptr 类型是智能指针在为方案设计多个所有者可能必须管理对象生存期内存中的 C++ 标准库中。 在初始化可以将它复制的 shared_ptr 后，将它在函数参数的值，并将其分配给其他 shared_ptr 实例。 所有实例指向同一对象，并且，对“的共享访问控制块”该引用计数的增量和减量，每当新 shared_ptr 添加，超出范围或重新设置。 当引用计数达到零时，控制块删除内存资源和自身。</p><p>下图显示了指向个内存位置的几 shared_ptr 实例。</p><img src="/2018/01/01/cpp_smart_ptr/shared_ptr.png" title="shared_ptr"><h2 id="创建和使用weak-ptr实例"><a href="#创建和使用weak-ptr实例" class="headerlink" title="创建和使用weak_ptr实例"></a>创建和使用weak_ptr实例</h2><p>有时，对象必须存储访问基础对象的一种方法shared_ptr而不会导致引用计数将增加。 通常情况下，这种情况发生时之间的循环引用shared_ptr实例。</p><p>最好的设计是尽可能避免共享的所有权的指针。 但是，如果您必须有共享的所有权shared_ptr实例，避免它们之间的循环引用。 当循环引用是不可避免的或甚至更可取，由于某种原因时，使用weak_ptr为一个或多个所有者提供弱引用到另一个shared_ptr。 通过使用weak_ptr，您可以创建shared_ptr的加入现有集相关的实例，但这仅基础内存资源是否仍然有效。 A weak_ptr本身不参与将引用计数，因此，它不能阻止的引用计数到零。<br>但是，您可以使用weak_ptr来试图获得一份新的shared_ptr使用的初始化。 如果内存已被删除， bad_weak_ptr ，则引发异常。 如果内存仍然有效，新共享的指针增加引用计数，并可保证内存是有效，只要shared_ptr变量可用。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;创建和使用unique-ptr实例&quot;&gt;&lt;a href=&quot;#创建和使用unique-ptr实例&quot; class=&quot;headerlink&quot; title=&quot;创建和使用unique_ptr实例&quot;&gt;&lt;/a&gt;创建和使用unique_ptr实例&lt;/h2&gt;&lt;p&gt;A unique_ptr不会共享它的指针。 无法将它复制到另一个unique_ptr，（除非它是可修改rvalue） 通过值传递给函数，或需要对其进行复制的任何标准模板库 (STL) 算法中使用。 A unique_ptr只能移动。 这意味着内存资源的所有权将转移到新的unique_ptr和原始unique_ptr不再拥有它。 我们建议您将一个对象限制为一个所有者，因为拥有多个程序逻辑增加复杂性。 因此，当您需要为普通的 C++ 对象的智能指针，使用unique_ptr。&lt;/p&gt;
+&lt;p&gt;下图说明了两个转让所有权unique_ptr实例。&lt;/p&gt;
+&lt;img src=&quot;/2018/01/01/cpp_smart_ptr/unique_ptr.png&quot; title=&quot;unique_ptr&quot;&gt;
+&lt;p&gt;移动 unique_ptr 的所有权&lt;br&gt;unique_ptr在中定义&lt;memory&gt; STL 中的标头。 它是完全有效与原始指针，可以使用 STL 容器中。 添加unique_ptr是有效的实例的 STL 容器因为移动构造函数的unique_ptr不需要复制操作。&lt;/memory&gt;&lt;/p&gt;
+&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;unique_ptr &lt;/p&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="CPP" scheme="https://wallenote.github.io/categories/CPP/"/>
+    
+    
+      <category term="编程" scheme="https://wallenote.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="CPP" scheme="https://wallenote.github.io/tags/CPP/"/>
+    
+      <category term="Smart Pointers" scheme="https://wallenote.github.io/tags/Smart-Pointers/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://wallenote.github.io/2018/01/01/hello-world/"/>
+    <id>https://wallenote.github.io/2018/01/01/hello-world/</id>
+    <published>2018-01-01T07:24:07.000Z</published>
+    <updated>2018-01-01T07:24:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
