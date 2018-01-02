@@ -84,7 +84,7 @@
 <meta name="description" content="但行好事 莫问前程">
 <meta property="og:type" content="website">
 <meta property="og:title" content="walle&#39;s Notes">
-<meta property="og:url" content="https://wallenote.github.io/index.html">
+<meta property="og:url" content="https://wallenotes.github.io/index.html">
 <meta property="og:site_name" content="walle&#39;s Notes">
 <meta property="og:description" content="但行好事 莫问前程">
 <meta property="og:locale" content="zh-Hans">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://wallenote.github.io/"/>
+  <link rel="canonical" href="https://wallenotes.github.io/"/>
 
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wallenote.github.io/2018/01/01/cpp_smart_ptr/">
+    <link itemprop="mainEntityOfPage" href="https://wallenotes.github.io/2018/01/01/cpp_smart_ptr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eter">
@@ -381,7 +381,7 @@
           <h2 id="创建和使用unique-ptr实例"><a href="#创建和使用unique-ptr实例" class="headerlink" title="创建和使用unique_ptr实例"></a>创建和使用unique_ptr实例</h2><p>A unique_ptr不会共享它的指针。 无法将它复制到另一个unique_ptr，（除非它是可修改rvalue） 通过值传递给函数，或需要对其进行复制的任何标准模板库 (STL) 算法中使用。 A unique_ptr只能移动。 这意味着内存资源的所有权将转移到新的unique_ptr和原始unique_ptr不再拥有它。 我们建议您将一个对象限制为一个所有者，因为拥有多个程序逻辑增加复杂性。 因此，当您需要为普通的 C++ 对象的智能指针，使用unique_ptr。</p>
 <p>下图说明了两个转让所有权unique_ptr实例。<br><img src="/2018/01/01/cpp_smart_ptr/unique_ptr.png" title="unique_ptr"></p>
 <p>移动 unique_ptr 的所有权<br>unique_ptr在中定义<memory> STL 中的标头。 它是完全有效与原始指针，可以使用 STL 容器中。 添加unique_ptr是有效的实例的 STL 容器因为移动构造函数的unique_ptr不需要复制操作。</memory></p>
-<p><strong> 示例 </strong><br>下面的示例演示如何创建unique_ptr实例，并将它们传递函数之间。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 示例 </strong><br>下面的示例演示如何创建unique_ptr实例，并将它们传递函数之间。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/01/cpp_smart_ptr/#more" rel="contents">
@@ -435,7 +435,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wallenote.github.io/2018/01/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://wallenotes.github.io/2018/01/01/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eter">
@@ -682,19 +682,43 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://docs.mongodb.com/manual/reference/sql-comparison/#examples" title="MongoDB" target="_blank">MongoDB</a>
+                    <a href="https://docs.mongodb.com/manual/reference/sql-comparison/#examples" title="MongoDB官网" target="_blank">MongoDB官网</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://docs.mongodb.com/manual/reference/sql-comparison/#examples" title="MySQL" target="_blank">MySQL</a>
+                    <a href="https://github.com/mongodb" title="MongoDB Github" target="_blank">MongoDB Github</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://docs.mongodb.com/manual/reference/sql-comparison/#examples" title="Redis" target="_blank">Redis</a>
+                    <a href="https://github.com/mongodb-labs" title="MongoDB-Labs Github" target="_blank">MongoDB-Labs Github</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://docs.mongodb.com/manual/reference/sql-comparison/#examples" title="RabbitMQ" target="_blank">RabbitMQ</a>
+                    <a href="https://github.com/Percona-Lab" title="Percona-Lab Github" target="_blank">Percona-Lab Github</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dev.mysql.com/doc/relnotes/mysql/5.7/en/" title="MySQL 5.7 Release Notes" target="_blank">MySQL 5.7 Release Notes</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://mysql.taobao.org/monthly/" title="淘宝MySQL内核月报" target="_blank">淘宝MySQL内核月报</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://redis.io/documentation" title="Redis官方" target="_blank">Redis官方</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redis.cn/" title="Redis中文" target="_blank">Redis中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/antirez/redis" title="Redis Github" target="_blank">Redis Github</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisbook.com/" title="Redis设计与实现" target="_blank">Redis设计与实现</a>
                   </li>
                 
               </ul>
