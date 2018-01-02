@@ -379,10 +379,9 @@
       
         
           <h2 id="创建和使用unique-ptr实例"><a href="#创建和使用unique-ptr实例" class="headerlink" title="创建和使用unique_ptr实例"></a>创建和使用unique_ptr实例</h2><p>A unique_ptr不会共享它的指针。 无法将它复制到另一个unique_ptr，（除非它是可修改rvalue） 通过值传递给函数，或需要对其进行复制的任何标准模板库 (STL) 算法中使用。 A unique_ptr只能移动。 这意味着内存资源的所有权将转移到新的unique_ptr和原始unique_ptr不再拥有它。 我们建议您将一个对象限制为一个所有者，因为拥有多个程序逻辑增加复杂性。 因此，当您需要为普通的 C++ 对象的智能指针，使用unique_ptr。</p>
-<p>下图说明了两个转让所有权unique_ptr实例。</p>
-<img src="/2018/01/01/cpp_smart_ptr/unique_ptr.png" title="unique_ptr">
+<p>下图说明了两个转让所有权unique_ptr实例。<br><img src="/2018/01/01/cpp_smart_ptr/unique_ptr.png" title="unique_ptr"></p>
 <p>移动 unique_ptr 的所有权<br>unique_ptr在中定义<memory> STL 中的标头。 它是完全有效与原始指针，可以使用 STL 容器中。 添加unique_ptr是有效的实例的 STL 容器因为移动构造函数的unique_ptr不需要复制操作。</memory></p>
-<div class="note info"><p>unique_ptr </p></div>
+<p><strong> 示例 </strong><br>下面的示例演示如何创建unique_ptr实例，并将它们传递函数之间。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/01/cpp_smart_ptr/#more" rel="contents">
