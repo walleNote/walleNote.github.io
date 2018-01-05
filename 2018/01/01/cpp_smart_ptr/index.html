@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="Smart Pointer 引入原因使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：  忘记delete内存，造成内存泄露 出现异常时，不会执行delete，造成内存泄露  下面的代码解释了，当一个操作发生异常时，会导致delete不会被执行：1234567void func() &amp;#123;    auto ptr = new Widget;    // 执行一个会抛出异常的">
+<meta name="description" content="他山之石 可以攻玉 – 《诗经·小雅·鹤鸣》  Smart Pointer 引入原因使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：  忘记delete内存，造成内存泄露 出现异常时，不会执行delete，造成内存泄露  下面的代码解释了，当一个操作发生异常时，会导致delete不会被执行：1234567void func() &amp;#123;    auto ptr = new">
 <meta name="keywords" content="编程,CPP,Smart Pointers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CPP使用Smart Pointer">
 <meta property="og:url" content="https://wallenotes.github.io/2018/01/01/cpp_smart_ptr/index.html">
 <meta property="og:site_name" content="walle&#39;s Notes">
-<meta property="og:description" content="Smart Pointer 引入原因使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：  忘记delete内存，造成内存泄露 出现异常时，不会执行delete，造成内存泄露  下面的代码解释了，当一个操作发生异常时，会导致delete不会被执行：1234567void func() &amp;#123;    auto ptr = new Widget;    // 执行一个会抛出异常的">
+<meta property="og:description" content="他山之石 可以攻玉 – 《诗经·小雅·鹤鸣》  Smart Pointer 引入原因使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：  忘记delete内存，造成内存泄露 出现异常时，不会执行delete，造成内存泄露  下面的代码解释了，当一个操作发生异常时，会导致delete不会被执行：1234567void func() &amp;#123;    auto ptr = new">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wallenotes.github.io/2018/01/01/cpp_smart_ptr/unique_ptr.png">
 <meta property="og:image" content="https://wallenotes.github.io/2018/01/01/cpp_smart_ptr/shared_ptr.png">
-<meta property="og:updated_time" content="2018-01-02T15:54:57.000Z">
+<meta property="og:updated_time" content="2018-01-04T08:48:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CPP使用Smart Pointer">
-<meta name="twitter:description" content="Smart Pointer 引入原因使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：  忘记delete内存，造成内存泄露 出现异常时，不会执行delete，造成内存泄露  下面的代码解释了，当一个操作发生异常时，会导致delete不会被执行：1234567void func() &amp;#123;    auto ptr = new Widget;    // 执行一个会抛出异常的">
+<meta name="twitter:description" content="他山之石 可以攻玉 – 《诗经·小雅·鹤鸣》  Smart Pointer 引入原因使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：  忘记delete内存，造成内存泄露 出现异常时，不会执行delete，造成内存泄露  下面的代码解释了，当一个操作发生异常时，会导致delete不会被执行：1234567void func() &amp;#123;    auto ptr = new">
 <meta name="twitter:image" content="https://wallenotes.github.io/2018/01/01/cpp_smart_ptr/unique_ptr.png">
 
 
@@ -379,7 +379,9 @@
       
 
       
-        <h2 id="Smart-Pointer-引入原因"><a href="#Smart-Pointer-引入原因" class="headerlink" title="Smart Pointer 引入原因"></a>Smart Pointer 引入原因</h2><p>使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：</p>
+        <blockquote class="blockquote-center"><p>他山之石 可以攻玉 – 《诗经·小雅·鹤鸣》</p>
+</blockquote>
+<h2 id="Smart-Pointer-引入原因"><a href="#Smart-Pointer-引入原因" class="headerlink" title="Smart Pointer 引入原因"></a>Smart Pointer 引入原因</h2><p>使用 Raw Pointer 管理动态内存时，经常会遇到这样的问题：</p>
 <ul>
 <li>忘记delete内存，造成内存泄露</li>
 <li>出现异常时，不会执行delete，造成内存泄露</li>
@@ -548,6 +550,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/01/04/memory-standard-segment-layout/" rel="prev" title="Linux进程的内存映射布局">
+                Linux进程的内存映射布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -623,7 +629,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +640,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -645,7 +651,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1283,6 +1289,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
   <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
